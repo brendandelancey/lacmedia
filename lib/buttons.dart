@@ -12,13 +12,17 @@ class Buttons extends StatelessWidget {
 //                width: ,
           height: MediaQuery.of(context).size.height ,
           child: RaisedButton(
-              onPressed: () {}, child: Text('Liberal'), color: Colors.red),
+              onPressed: () {
+                Navigator.pushNamed(context, '/second');
+              }, child: Text('Liberal'), color: Colors.red),
         ),
         Container(
 //          width: 1,
           height: MediaQuery.of(context).size.height ,
           child: RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/third');
+              },
               child: Text('Conservative'),
               color: Colors.blue),
         ),

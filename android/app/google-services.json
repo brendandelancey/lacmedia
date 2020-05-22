@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "170654381250",
+    "firebase_url": "https://lac-media.firebaseio.com",
+    "project_id": "lac-media",
+    "storage_bucket": "lac-media.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170654381250:android:c09a15c91af51617b4775b",
+        "android_client_info": {
+          "package_name": "com.application.lacmedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170654381250-7k7dcqmpmvt1m5e9636pu12k71pos6vj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIWj-xdOIpIWXEyvuAyvPdyyNGmadoobs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170654381250-7k7dcqmpmvt1m5e9636pu12k71pos6vj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
