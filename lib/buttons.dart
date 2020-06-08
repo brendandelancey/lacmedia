@@ -1,7 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class Buttons extends StatelessWidget {
+  final DatabaseReference database = FirebaseDatabase.instance.reference().child("test");
+
+  sendData(){
+    database.push().set({'name':'Peter','lastName':'Ross'
+    });
+    conservativeArticles(){
+//      final Query player = FirebaseDatabase.instance.reference().child("Conservative").orderByChild("positionInList").limitToFirst(1);
+//      player
+
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Table(columnWidths: {
@@ -22,6 +34,7 @@ class Buttons extends StatelessWidget {
           child: RaisedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/third');
+                sendData();
               },
               child: Text('Conservative'),
               color: Colors.blue),
