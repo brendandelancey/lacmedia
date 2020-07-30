@@ -10,6 +10,7 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 void main() => runApp(
 
       MaterialApp(
+        theme: ThemeData(fontFamily: 'PlayfairDisplay'),
 
         // Start the app with the "/" named route. In this case, the app starts
         // on the FirstScreen widget.
@@ -30,10 +31,11 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("LaC Media"),
-        backgroundColor: Colors.blueGrey[900],
+        title: Text("LaC Media",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        backgroundColor: Colors.black87,
       ),
       body: Buttons(),
     );
@@ -44,12 +46,12 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Liberal News of The Day"),
-        backgroundColor: Colors.blueGrey[900],
+        title: Text("Liberal News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.black87,
       ),
-      body: List("Liberal"),
+      body: List("Liberal")
 //        child: RaisedButton(
 //          onPressed: () {
 //            Navigator.pop(context);
@@ -63,10 +65,10 @@ class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text("Conservative News of The Day"),
-          backgroundColor: Colors.blueGrey[900],
+          title: Text("Conservative News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          backgroundColor: Colors.black87,
         ),
         body: List("Conservative"));
   }
@@ -78,12 +80,12 @@ class FourthScreen extends StatelessWidget {
   FourthScreen(this.articleBody);
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text("Liberal News of The Day"),
-          backgroundColor: Colors.blueGrey[900],
+          title: Text("Liberal News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          backgroundColor: Colors.black87,
         ),
-        body: Texts(articleBody));
+        body: Texts(articleBody.substring(articleBody.indexOf(' ')+1)));
   }
 }
 
@@ -93,12 +95,12 @@ class FifthScreen extends StatelessWidget {
   FifthScreen(this.articleBody);
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text("Conservative News of The Day"),
-          backgroundColor: Colors.blueGrey[900],
+          title: Text("Conservative News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold) ),
+          backgroundColor: Colors.black87,
         ),
-        body: Texts(articleBody));
+        body: Texts(articleBody.substring(articleBody.indexOf(' ')+1)));
   }
 }
 

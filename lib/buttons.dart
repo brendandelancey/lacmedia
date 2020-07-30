@@ -23,10 +23,17 @@ class Buttons extends StatelessWidget {
         Container(
 //                width: ,
           height: MediaQuery.of(context).size.height ,
+
           child: RaisedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/second');
-              }, child: Text('Liberal'), color: Colors.red),
+              },
+              //              check for relative sizing for larger phones and the logos being positioned poorly
+              padding: EdgeInsets.only( bottom: 100.0),
+
+              child: Text('Liberal',textAlign: TextAlign.right , style: TextStyle(color: Colors.white,fontSize: 28,fontWeight:FontWeight.bold,fontStyle:FontStyle.italic,  ), ),
+              color: Color(0xFFD50000)),
+
         ),
         Container(
 //          width: 1,
@@ -36,8 +43,10 @@ class Buttons extends StatelessWidget {
                 Navigator.pushNamed(context, '/third');
                 sendData();
               },
-              child: Text('Conservative'),
-              color: Colors.blue),
+//              check for relative sizing for larger phones and the logos being positioned poorly
+              padding: EdgeInsets.only( bottom: 100.0),
+              child: Text('Conservative', style: TextStyle(color: Colors.white,fontSize: 28,fontWeight:FontWeight.bold,fontStyle:FontStyle.italic  ),),
+              color: Color(0xFF01579B)),
         ),
       ]),
     ]);

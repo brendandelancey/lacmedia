@@ -17,12 +17,12 @@ class Texts extends StatelessWidget {
         image: NetworkImage('https://i1.wp.com/www.luxuriousmagazine.com/wp-content/uploads/2013/10/Hasselblad-H4D-40-9a.jpg?resize=630%2C424&ssl=1'),
     ),),
         Container(
-
+            padding: EdgeInsets.all(20.0),
             child: Text(
             articleBody,
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            textAlign: TextAlign.left,
+
+            style: TextStyle( color: Colors.black87,  fontFamily:'PlayfairDisplay'),
           ),)
       ],
     );
