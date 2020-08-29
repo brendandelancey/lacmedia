@@ -30,4 +30,3 @@ class Texts extends StatelessWidget {
 
   }
 }
-//https://i.pinimg.com/originals/44/bb/06/44bb06a2cc86fcd3dc1105fbaa512775.jpg

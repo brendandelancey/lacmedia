@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'buttons.dart';
 import 'list.dart';
 import 'text.dart';
-import 'package:firebase_database/firebase_database.dart';
+//import 'package:firebase_database/firebase_database.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
+//import 'package:firebase_database/ui/firebase_animated_list.dart';
 
 void main() => runApp(
 
       MaterialApp(
+        title: 'LaC Media',
         theme: ThemeData(fontFamily: 'PlayfairDisplay'),
 
         // Start the app with the "/" named route. In this case, the app starts
@@ -51,13 +52,7 @@ class SecondScreen extends StatelessWidget {
         title: Text("Liberal News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         backgroundColor: Colors.black87,
       ),
-      body: List("Liberal")
-//        child: RaisedButton(
-//          onPressed: () {
-//            Navigator.pop(context);
-//          },
-//          child: Text('Go back!'),
-    );
+      body: List("Liberal"));
   }
 }
 
@@ -104,31 +99,3 @@ class FifthScreen extends StatelessWidget {
   }
 }
 
-//class GettingData extends StatelessWidget {
-//  @override
-//  Widget build(BuildContext context) {
-//    return new Scaffold(
-//      appBar: new AppBar(title: new Text("Firebase Example"),),
-//      body: new Column(
-//        children: <Widget>[
-//          new Flexible(
-//            child: new FirebaseAnimatedList(
-//                query: FirebaseDatabase.instance
-//                    .reference().child("contacts")
-//                    .orderByChild("email")
-//                    .startAt("em1@gmail.com").endAt("em1@gmail.com"),
-//                padding: new EdgeInsets.all(8.0),
-//                reverse: false,
-//                itemBuilder: (_, DataSnapshot snapshot,
-//                    Animation<double> animation, int x) {
-//                  return new ListTile(
-//                    subtitle: new Text(snapshot.value.toString()),
-//                  );
-//                }
-//            ),
-//          ),
-//        ],
-//      ),
-//    );
-//  }
-//}
