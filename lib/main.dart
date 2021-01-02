@@ -10,6 +10,7 @@ import 'text.dart';
 void main() => runApp(
 
       MaterialApp(
+
         title: 'LaC Media',
         theme: ThemeData(fontFamily: 'PlayfairDisplay'),
 
@@ -26,11 +27,13 @@ void main() => runApp(
 //          '/fifth': (context) => FifthScreen(),
         },
       ),
+
     );
 
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // print("HERE??????????????");
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -89,6 +92,7 @@ class FifthScreen extends StatelessWidget {
   String articleBody;
   FifthScreen(this.articleBody);
   Widget build(BuildContext context) {
+    print(articleBody.indexOf(0));
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
