@@ -7,14 +7,16 @@ import 'package:flutter/material.dart';
 class Texts extends StatelessWidget {
   @override
   String articleBody;
-  Texts(this.articleBody);
+  String imageURL;
+  Texts(this.articleBody, this.imageURL);
   Widget build(BuildContext context) {
     //double c_width = MediaQuery.of(context).size.width*0.8;
+    // print(imageURL);
     return Column(
       children: <Widget>[
     Container(
     child: Image(
-        image: NetworkImage('https://i1.wp.com/www.luxuriousmagazine.com/wp-content/uploads/2013/10/Hasselblad-H4D-40-9a.jpg?resize=630%2C424&ssl=1'),
+        image: NetworkImage(imageURL),
     ),),
         Container(
             padding: EdgeInsets.all(20.0),

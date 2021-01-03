@@ -74,28 +74,34 @@ class FourthScreen extends StatelessWidget {
   String articleBody;
   FourthScreen(this.articleBody);
   Widget build(BuildContext context) {
+    var words =articleBody.split(' ');
+    var editedArticleBody= articleBody.substring((words[0].length+words[1].length+2),articleBody.length);
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text("Liberal News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           backgroundColor: Colors.black87,
         ),
-        body: Texts(articleBody.substring(articleBody.indexOf(' ')+1)));
+        body: Texts(editedArticleBody,words[1]));
   }
 }
 
 class FifthScreen extends StatelessWidget {
   @override
   String articleBody;
+
+
   FifthScreen(this.articleBody);
   Widget build(BuildContext context) {
+    var words =articleBody.split(' ');
+    var editedArticleBody= articleBody.substring((words[0].length+words[1].length+2),articleBody.length);
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text("Conservative News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold) ),
           backgroundColor: Colors.black87,
         ),
-        body: Texts(articleBody.substring(articleBody.indexOf(' ')+1)));
+        body: Texts(editedArticleBody,words[1]));
   }
 }
 
