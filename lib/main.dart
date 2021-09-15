@@ -82,7 +82,12 @@ class FourthScreen extends StatelessWidget {
           title: Text("Liberal News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           backgroundColor: Colors.black87,
         ),
-        body: Texts(editedArticleBody,words[1]));
+        body: LayoutBuilder(
+            builder: (context, constraint) {
+              return SingleChildScrollView(
+                  child: Texts(editedArticleBody,words[1])
+              );
+            }));
   }
 }
 
@@ -101,7 +106,12 @@ class FifthScreen extends StatelessWidget {
           title: Text("Conservative News of The Day",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold) ),
           backgroundColor: Colors.black87,
         ),
-        body: Texts(editedArticleBody,words[1]));
+        body: LayoutBuilder(
+        builder: (context, constraint) {
+          return SingleChildScrollView(
+              child: Texts(editedArticleBody,words[1])
+          );
+    }));
   }
 }
 

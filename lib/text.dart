@@ -17,6 +17,9 @@ class Texts extends StatelessWidget {
     Container(
     child: Image(
         image: NetworkImage(imageURL),
+        errorBuilder: (BuildContext context, Object exception, StackTrace stackTrace) {
+        return Text('');
+      },
     ),),
         Container(
             padding: EdgeInsets.all(20.0),
@@ -24,7 +27,7 @@ class Texts extends StatelessWidget {
             articleBody,
             textAlign: TextAlign.left,
 
-            style: TextStyle( color: Colors.black87,  fontFamily:'PlayfairDisplay'),
+            style: TextStyle( color: Colors.black87,  fontFamily:'PlayfairDisplay', fontSize: 24),
           ),)
       ],
     );
