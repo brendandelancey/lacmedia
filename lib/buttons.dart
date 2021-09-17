@@ -24,30 +24,43 @@ class Buttons extends StatelessWidget {
 //                width: ,
           height: MediaQuery.of(context).size.height ,
 
-          child: RaisedButton(
+          child: Padding( padding:EdgeInsets.only( bottom: 100.0),
+          child:ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/second');
               },
               //              check for relative sizing for larger phones and the logos being positioned poorly
-              padding: EdgeInsets.only( bottom: 100.0),
+              // padding: EdgeInsets.only( bottom: 100.0),
 
-              child: Text('Liberal',textAlign: TextAlign.right , style: TextStyle(color: Colors.white,fontSize: 28,fontWeight:FontWeight.bold,fontStyle:FontStyle.italic,  ), ),
-              color: Color(0xFFD50000)),
+              // child: Text('Liberal', , style: TextStyle(color: Colors.white,fontSize: 28,fontWeight:FontWeight.bold,fontStyle:FontStyle.italic,  ), ),
+              // color: Color(0xFFD50000)),
+              child: Text('Liberal', textAlign: TextAlign.right,style: TextStyle(color: Colors.white,fontSize: 28,fontWeight:FontWeight.bold,fontStyle:FontStyle.italic  ),),
+              style: ElevatedButton.styleFrom(
+                  primary: Color(0xFFD50000),
+                  shape: const BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0))),
 
-        ),
+    )),
+
+          )),
         Container(
-//          width: 1,
           height: MediaQuery.of(context).size.height ,
-          child: RaisedButton(
+
+          child: Padding( padding:EdgeInsets.only( bottom: 100.0),
+              child:ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/third');
                 //sendData();
               },
 //              check for relative sizing for larger phones and the logos being positioned poorly
-              padding: EdgeInsets.only( bottom: 100.0),
+
               child: Text('Conservative', style: TextStyle(color: Colors.white,fontSize: 28,fontWeight:FontWeight.bold,fontStyle:FontStyle.italic  ),),
-              color: Color(0xFF01579B)),
-        ),
+              style: ElevatedButton.styleFrom(
+                // shape: BorderRadius.all(0),
+                  primary: Color(0xFF01579B),
+                  shape: const BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0))),
+
+              )),
+        )),
       ]),
     ]);
   }
