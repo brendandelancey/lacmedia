@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:lacmedia/Screens/ConservativeListScreen.dart';
+import 'package:lacmedia/Screens/LiberalListScreen.dart';
 import 'package:lacmedia/bottomPopup.dart';
+import 'package:lacmedia/list.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Buttons extends StatelessWidget {
   final DatabaseReference database =
@@ -34,7 +37,11 @@ class Buttons extends StatelessWidget {
 
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/second');
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.leftToRight,
+                            child: LiberalListScreen()));
                   },
                   child: Align(
                       alignment: Alignment(0, -0.2),
@@ -88,17 +95,6 @@ class Buttons extends StatelessWidget {
                   )),
             ),
           ]),
-          // TableRow(
-          //   children: <Widget>[
-          //     // Positioned(
-          //     // left: 40.0,
-          //     // top: 1000.0,
-          //     // child:
-
-          //     // ),
-          //     Text("")
-          //   ],
-          // ),
         ]),
         Positioned(
           right: 100.0,
@@ -110,8 +106,8 @@ class Buttons extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     // Navigator.pushNamed(context, '/third');
-                    BottomPopup().showBottomSheetModal(
-                        context, Text("Opinon article List"), 0.75);
+                    BottomPopup()
+                        .showBottomSheetModal(context, Widgetlist(), 0.75);
                     //sendData();
                   },
                   //              check for relative sizing for larger phones and the logos being positioned poorly
