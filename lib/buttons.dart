@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:lacmedia/Screens/ConservativeListScreen.dart';
 import 'package:lacmedia/Screens/LiberalListScreen.dart';
 import 'package:lacmedia/bottomPopup.dart';
 import 'package:lacmedia/list.dart';
@@ -11,22 +9,9 @@ class Buttons extends StatelessWidget {
   final DatabaseReference database =
       FirebaseDatabase.instance.reference().child("test");
 
-//  sendData(){
-////    database.push().set({'name':'Peter','lastName':'Ross'
-////    });
-////    conservativeArticles(){
-//////      final Query player = FirebaseDatabase.instance.reference().child("Conservative").orderByChild("positionInList").limitToFirst(1);
-//////      player
-////
-////    }
-//  }
   @override
   Widget build(BuildContext context) {
-    return
-
-        // SingleChildScrollView(
-        //   child:
-        Stack(
+    return Stack(
       children: [
         Table(columnWidths: {
           1: FractionColumnWidth(0.5)
@@ -71,7 +56,6 @@ class Buttons extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/third');
-                    //sendData();
                   },
 //              check for relative sizing for larger phones and the logos being positioned poorly
 
@@ -105,7 +89,6 @@ class Buttons extends StatelessWidget {
               height: 70,
               child: ElevatedButton(
                   onPressed: () {
-                    // Navigator.pushNamed(context, '/third');
                     BottomPopup()
                         .showBottomSheetModal(context, Widgetlist(), 0.75);
                     //sendData();

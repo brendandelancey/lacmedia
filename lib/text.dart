@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-//import 'package:firebase_database/firebase_database.dart';
-//import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Texts extends StatelessWidget {
   @override
@@ -11,8 +8,6 @@ class Texts extends StatelessWidget {
   String creditURL;
   Texts(this.articleBody, this.imageURL, this.creditURL);
   Widget build(BuildContext context) {
-    //double c_width = MediaQuery.of(context).size.width*0.8;
-    // print(imageURL);
     return Column(
       children: <Widget>[
         Container(
@@ -51,7 +46,6 @@ class Texts extends StatelessWidget {
                     },
                     child: Text(creditURL)))
             : Container(),
-        // Spacer()
       ],
     );
   }

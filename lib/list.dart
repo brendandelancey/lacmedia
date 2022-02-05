@@ -36,8 +36,6 @@ class List extends StatelessWidget {
                 itemBuilder: (context, DataSnapshot snapshot,
                     Animation<double> animation, int x) {
                   // ! DB -> politicalAffiliation -> Article# -> Order: 0, Title: Corona, Image: URL,  Credit Link: URL, Content: BODY, Date: Date
-                  // print(snapshot.key);
-                  // print(snapshot.value);
 
                   var titleOfArticle = snapshot.value['Title'];
                   var dateCreated = snapshot.value['Date Created'];
@@ -45,14 +43,6 @@ class List extends StatelessWidget {
                   var credit = snapshot.value['Credit'];
                   var contentOfArticle = snapshot.value['Content'];
                   var imageOfArticle = snapshot.value['Image'];
-
-                  // print("Title: " + titleOfArticle);
-                  // print("Date Created: " + dateCreated);
-                  // print("Order: " + orderLowestIsFirst.toString());
-                  // print("Credit URL: " + credit);
-                  // print("Content: " + contentOfArticle);
-                  // print("Image URL: " + imageOfArticle);
-
                   return Card(
                     color: Color(color),
                     child: ListTile(
@@ -61,11 +51,7 @@ class List extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 24, fontWeight: FontWeight.bold),
                       ),
-//                      selected:select,
                       onTap: () {
-                        // if (politicalAffiliation == 'Conservative') {
-                        print("HERRRRRREEEEEE??????????????????????");
-
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -77,16 +63,6 @@ class List extends StatelessWidget {
                                 dateCreated),
                           ),
                         );
-                        // }
-                        //  else {
-                        //   Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) =>
-                        //           FourthScreen(snapshot.value.toString()),
-                        //     ),
-                        //   );
-                        // }
                       },
                     ),
                   );
@@ -112,8 +88,6 @@ Widget Widgetlist() {
               itemBuilder: (context, DataSnapshot snapshot,
                   Animation<double> animation, int x) {
                 // ! DB -> politicalAffiliation -> Article# -> Order: 0, Title: Corona, Image: URL,  Credit Link: URL, Content: BODY, Date: Date
-                // print(snapshot.key);
-                // print(snapshot.value);
 
                 var titleOfArticle = snapshot.value['Title'];
                 var dateCreated = snapshot.value['Date Created'];
@@ -137,11 +111,7 @@ Widget Widgetlist() {
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
-//                      selected:select,
                     onTap: () {
-                      // if (politicalAffiliation == 'Conservative') {
-                      print("HERRRRRREEEEEE??????????????????????");
-
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -153,16 +123,6 @@ Widget Widgetlist() {
                               dateCreated),
                         ),
                       );
-                      // }
-                      //  else {
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) =>
-                      //           FourthScreen(snapshot.value.toString()),
-                      //     ),
-                      //   );
-                      // }
                     },
                   ),
                 );
