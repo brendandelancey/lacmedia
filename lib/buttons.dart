@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:lacmedia/Screens/ConservativeListScreen.dart';
+import 'package:lacmedia/bottomPopup.dart';
 
 class Buttons extends StatelessWidget {
   final DatabaseReference database =
@@ -17,84 +19,128 @@ class Buttons extends StatelessWidget {
 //  }
   @override
   Widget build(BuildContext context) {
-    return Table(columnWidths: {
-      1: FractionColumnWidth(0.5)
-    }, children: [
-      TableRow(children: <Widget>[
-        Container(
-//                width: ,
-          height: MediaQuery.of(context).size.height,
+    return
 
-          // child:
-          // Padding(
-          // padding:EdgeInsets.only( bottom: 100.0),
-          child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/second');
-              },
-              //              check for relative sizing for larger phones and the logos being positioned poorly
-              // padding: EdgeInsets.only( bottom: 100.0),
+        // SingleChildScrollView(
+        //   child:
+        Stack(
+      children: [
+        Table(columnWidths: {
+          1: FractionColumnWidth(0.5)
+        }, children: [
+          TableRow(children: <Widget>[
+            Container(
+              height: MediaQuery.of(context).size.height,
 
-              // child: Text('Liberal', , style: TextStyle(color: Colors.white,fontSize: 28,fontWeight:FontWeight.bold,fontStyle:FontStyle.italic,  ), ),
-              // color: Color(0xFFD50000)),
-              child: Align(
-                  alignment: Alignment(0, -0.2),
-                  child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        'Liberal',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                            // height: 20,
-                            color: Colors.white,
-                            fontSize: 29,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic),
-                      ))),
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xFFD50000),
-                onPrimary: Color(0x7D0404),
-                shape: const BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(0))),
-              )),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/second');
+                  },
+                  child: Align(
+                      alignment: Alignment(0, -0.2),
+                      child: FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            'Liberal',
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                                // height: 20,
+                                color: Colors.white,
+                                fontSize: 29,
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic),
+                          ))),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFD50000),
+                    onPrimary: Color(0x7D0404),
+                    shape: const BeveledRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(0))),
+                  )),
 
-          // )
-        ),
-        Container(
-          height: MediaQuery.of(context).size.height,
-
-          // child: Padding(
-          // padding:EdgeInsets.only( bottom: 0),
-          child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/third');
-                //sendData();
-              },
+              // )
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/third');
+                    //sendData();
+                  },
 //              check for relative sizing for larger phones and the logos being positioned poorly
 
-              child: Align(
-                  alignment: Alignment(0, -0.2),
-                  child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        'Conservative',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 29,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic),
-                      ))),
-              style: ElevatedButton.styleFrom(
-                // shape: BorderRadius.all(0),
+                  child: Align(
+                      alignment: Alignment(0, -0.2),
+                      child: FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            'Conservative',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 29,
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic),
+                          ))),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF01579B),
+                    onPrimary: Color(0x4147D),
+                    shape: const BeveledRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(0))),
+                  )),
+            ),
+          ]),
+          // TableRow(
+          //   children: <Widget>[
+          //     // Positioned(
+          //     // left: 40.0,
+          //     // top: 1000.0,
+          //     // child:
 
-                primary: Color(0xFF01579B),
-                onPrimary: Color(0x4147D),
-                shape: const BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(0))),
-              )),
-          // )
-        ),
-      ]),
-    ]);
+          //     // ),
+          //     Text("")
+          //   ],
+          // ),
+        ]),
+        Positioned(
+          right: 100.0,
+          bottom: 0.0,
+          child: Align(
+            alignment: Alignment(100, 0),
+            child: Container(
+              height: 70,
+              child: ElevatedButton(
+                  onPressed: () {
+                    // Navigator.pushNamed(context, '/third');
+                    BottomPopup().showBottomSheetModal(
+                        context, Text("Opinon article List"), 0.75);
+                    //sendData();
+                  },
+                  //              check for relative sizing for larger phones and the logos being positioned poorly
+
+                  child: Align(
+                      alignment: Alignment(100, 0),
+                      child: FittedBox(
+                          fit: BoxFit.contain,
+                          child: Text(
+                            'Opinion Articles',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic),
+                          ))),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 255, 255, 255),
+                    onPrimary: Color(0x4147D),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(15.0),
+                    )),
+                  )),
+            ),
+          ),
+        )
+      ],
+      // ),
+    );
   }
 }
